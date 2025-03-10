@@ -18,18 +18,18 @@
             color: white;
             font-family: 'Poppins', sans-serif;
             position: relative;
-            overflow: hidden; /* Ensures video covers entire screen */
+            overflow: hidden; /* Ensures content fits inside viewport */
         }
 
-        /* Video Background */
-        video {
+        /* WebP Background */
+        .background-webp {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1;
+            z-index: -1; /* Ensure it stays in the background */
         }
 
         body::before {
@@ -82,11 +82,8 @@
     </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <video autoplay muted loop>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- WebP Background -->
+    <img src="video.webp" alt="Background Animated WebP" class="background-webp">
 
     <div class="names">Leandro ❤ Mateus</div>
     <div class="overlay">
