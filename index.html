@@ -18,18 +18,18 @@
             color: white;
             font-family: 'Poppins', sans-serif;
             position: relative;
-            overflow: hidden; /* Ensures content fits inside viewport */
+            overflow: hidden; /* Ensures video covers entire screen */
         }
 
-        /* GIF Background */
-        .background-gif {
+        /* Video Background */
+        video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Ensure it stays in the background */
+            z-index: -1;
         }
 
         body::before {
@@ -82,8 +82,11 @@
     </style>
 </head>
 <body>
-    <!-- GIF Background -->
-    <img src="video.gif" alt="Background Animated GIF" class="background-gif">
+    <!-- Video Background -->
+    <video autoplay muted loop>
+        <source src="_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <div class="names">Leandro ❤ Mateus</div>
     <div class="overlay">
