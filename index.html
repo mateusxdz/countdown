@@ -16,22 +16,11 @@
             height: 100vh;
             text-align: center;
             color: white;
+            background: url('image.jpeg') no-repeat center center/cover;
             font-family: 'Poppins', sans-serif;
             position: relative;
-            overflow: hidden; /* Ensures content fits inside viewport */
         }
-
-        /* WebP Background */
-        .background-webp {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Ensure it stays in the background */
-        }
-
+        
         body::before {
             content: "";
             position: absolute;
@@ -42,7 +31,7 @@
             background: rgba(0, 0, 0, 0.6); /* Light transparency effect */
             z-index: -1;
         }
-
+        
         .overlay {
             background: rgba(0, 0, 0, 0.4);
             padding: 15px;
@@ -82,9 +71,6 @@
     </style>
 </head>
 <body>
-    <!-- WebP Background -->
-    <img src="video.webp" alt="Background Animated WebP" class="background-webp">
-
     <div class="names">Leandro ❤ Mateus</div>
     <div class="overlay">
         <h1>Contando os segundos para te ter nos meus braços!</h1>
@@ -104,7 +90,7 @@
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
             document.getElementById("countdown").innerHTML = 
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                ${days}d ${hours}h ${minutes}m ${seconds}s;
 
             if (difference < 0) {
                 document.getElementById("countdown").innerHTML = "Ele chegou! ❤️";
